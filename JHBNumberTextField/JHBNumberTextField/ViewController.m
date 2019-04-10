@@ -56,8 +56,8 @@
     textField.placeholder = placeholder;
     textField.maxInputValue = maxInputValue;
     textField.numberOfDecimals = numberOfDecimals;
-    textField.valueDidChangeBlock = ^(double value, double maxValue, NSString *text) {
-        NSLog(@"value:%f, maxValue:%f, text:%@", value, maxValue, text);
+    textField.valueDidChangeBlock = ^(double value, NSString *text) {
+        NSLog(@"value:%f, text:%@", value, text);
     };
     [self.view addSubview:textField];
     return textField;

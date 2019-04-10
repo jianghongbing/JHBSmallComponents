@@ -71,15 +71,12 @@
 
 - (void)_textDidChange {
     double value = [self.text doubleValue];
-    if (self.maxInputValue <= 0) {
-        
-    }else {
-        if (value > self.maxInputValue) {
-            self.text = [self _formatMaxInputValue];
-        }
+    if (self.maxInputValue > 0 && value > self.maxInputValue) {
+        self.text = [self _formatMaxInputValue];
+        value = self.maxInputValue;
     }
     if (self.valueDidChangeBlock) {
-        self.valueDidChangeBlock(value, self.maxInputValue, self.text);
+        self.valueDidChangeBlock(value, self.text);
     }
 
 }
