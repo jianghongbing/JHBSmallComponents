@@ -41,9 +41,11 @@
     frame.origin.y = CGRectGetMaxY(frame) + margin;
     textField = [self textFieldWithFrame:frame maxInputValue:100  numberOfDecimals:NSIntegerMax placeholder:@"小数位无限制,最大数100"];
     frame.origin.y = CGRectGetMaxY(frame) + margin;
-    textField = [self textFieldWithFrame:frame maxInputValue:99.99  numberOfDecimals:NSIntegerMax placeholder:@"小数位无限制,最大数99.99"];
+    textField = [self textFieldWithFrame:frame maxInputValue:99.99999999  numberOfDecimals:NSIntegerMax placeholder:@"小数位无限制,最大数99.99999999"];
     frame.origin.y = CGRectGetMaxY(frame) + margin;
     textField = [self textFieldWithFrame:frame maxInputValue:99.95  numberOfDecimals:3 placeholder:@"保留3位小数,最大数99.95"];
+    frame.origin.y = CGRectGetMaxY(frame) + margin;
+    textField = [self textFieldWithFrame:frame maxInputValue:99.95  numberOfDecimals:1 placeholder:@"保留1位小数,最大数99.95"];
     [self addKeyboardObserver];
 }
 

@@ -45,19 +45,18 @@
     [super setDelegate:self];
 }
 
-- (void)setNumberOfDecimals:(NSInteger)numberOfDecimals {
+- (void)setNumberOfDecimals:(NSUInteger)numberOfDecimals {
     _numberOfDecimals = numberOfDecimals;
     [self setKeyboardType:0];
 }
 
 - (void)commonInit {
-    self.delegate = nil;
     [self removeObserver];
     [self addObserver];
+    self.delegate = nil;
     self.delegate = self;
     [self setKeyboardType:UIKeyboardTypeNumberPad];
-    self.maxInputValue = 0;
-    self.numberOfDecimals = 0;
+//    self.numberOfDecimalsWhenFormatMaxInputValue = 2;
 }
 
 - (void)addObserver {
@@ -87,7 +86,8 @@
 
 - (NSString *)_formatMaxInputValue {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    formatter.maximumFractionDigits = self.numberOfDecimals;
+    formatter.roundingMode = NSNumberFormatterRoundDown;
+    formatter.maximumFractionDigits = self.numberOfDecimals >= 6 ? 6 : self.numberOfDecimals;
     NSNumber *number = [NSNumber numberWithDouble:self.maxInputValue];
     return [formatter stringFromNumber:number];
 }
