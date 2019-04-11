@@ -56,7 +56,6 @@
     self.delegate = nil;
     self.delegate = self;
     [self setKeyboardType:UIKeyboardTypeNumberPad];
-//    self.numberOfDecimalsWhenFormatMaxInputValue = 2;
 }
 
 - (void)addObserver {
