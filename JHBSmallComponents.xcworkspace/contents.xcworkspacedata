@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:JHBCopyableLabel/JHBCopyableLabel.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:JHBNumberTextField/JHBNumberTextField.xcodeproj">
    </FileRef>
 </Workspace>
