@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JHBCopyableLabel : UILabel
 @property (nonatomic, getter=isCopyabled) BOOL copyabled;
 @property (nullable, nonatomic, copy) NSString *menuItemTitle;
-@property (nullable, nonatomic, strong) UIColor *highlightedBackgroundColor;
+@property (nullable, nonatomic, strong) UIColor *highlightedBackgroundColor UI_APPEARANCE_SELECTOR;
 @end
 
 NS_ASSUME_NONNULL_END
